@@ -27,7 +27,7 @@ public class Image extends Widget{
 
     @Override
     public void render(SpriteBatch batch) {
-        if (!isHidden()) batch.draw(image, x, y);
+        if (!isHidden()) batch.draw(image, getLocation().getX(), getLocation().getY());
         update();
     }
 }

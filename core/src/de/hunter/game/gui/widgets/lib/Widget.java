@@ -14,6 +14,11 @@ public class Widget implements IWidget, Disposable {
     }
 
     @Override
+    public Location2D getLocation() {
+        return location2D;
+    }
+
+    @Override
     public void setLocation(int x, int y) {
         location2D.set(x, y);
     }
