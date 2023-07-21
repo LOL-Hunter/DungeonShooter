@@ -45,7 +45,7 @@ public class Main extends ApplicationAdapter {
 		Model floorModel = modelBuilder.createLineGrid(20, 20, 5, 5, materialGreen, Usage.Position | Usage.Normal);
 
 		int attr =  Usage.Position | Usage.Normal | Usage.TextureCoordinates;
-
+		
 		// create Grassblock
 		modelBuilder.begin();
 		float size = 5.0f;
