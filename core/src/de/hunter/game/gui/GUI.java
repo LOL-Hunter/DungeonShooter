@@ -2,6 +2,7 @@ package de.hunter.game.gui;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.OrderedMap;
+import de.hunter.game.Player;
 import de.hunter.game.camera.Camera;
 import de.hunter.game.gamemath.GameMath;
 import de.hunter.game.gui.widgets.lib.Image;
@@ -24,7 +25,8 @@ public class GUI {
     public static void registerWidget(String name, Widget widget){
         widgets.put(name, widget);
     }
-    public static void render(){
+    public static void render(Player player){
+        //batch.setProjectionMatrix(player.getCamera().combined);
         batch.begin();
         for (Widget l:widgets.values()){
             l.render(batch);

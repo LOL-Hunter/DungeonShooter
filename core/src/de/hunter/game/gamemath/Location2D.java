@@ -15,7 +15,7 @@ public class Location2D extends BaseLocation{
         this(loc.getX(), loc.getY());
     }
     public void set(int x, int y){
-
-
+        this.x = x;
+        this.y = y;
     }
 }

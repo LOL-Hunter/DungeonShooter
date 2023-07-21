@@ -6,11 +6,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import de.hunter.game.camera.Camera;
 
 public class Label extends Widget {
-    private Camera camera;
     private final BitmapFont font;
     private String text = "";
-    public Label(Camera camera){
-        this.camera = camera;
+    public Label(){
         this.font = new BitmapFont();
         font.getData().setScale(.99f);
     }

@@ -24,7 +24,6 @@ public class Camera extends PerspectiveCamera {
         this.near = 1f;              // near (range camera) "render distance"
         this.far = 100f;             // far
         this.update();
-        //addHeight(20);
         cameraController = new CameraController(this);
         Gdx.input.setInputProcessor(cameraController);
         System.out.print(forw);

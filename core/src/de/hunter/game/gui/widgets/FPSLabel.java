@@ -13,8 +13,8 @@ public class FPSLabel extends Label {
     private float frameRate;
 
 
-    public FPSLabel(Camera camera) {
-        super(camera);
+    public FPSLabel() {
+        super();
         lastTimeCounted = TimeUtils.millis();
         sinceChange = 0;
         frameRate = Gdx.graphics.getFramesPerSecond();

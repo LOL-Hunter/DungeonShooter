@@ -14,12 +14,12 @@ public class OverlyText {
     public static SpriteBatch batch;
     public static OrderedMap<String, Label> labels = new OrderedMap<>();
 
-    public static void init(Camera camera){
+    public static void init(){
         batch = new SpriteBatch();
-        labels.put("FPSLabel", new FPSLabel(camera));
-        labels.put("PositionLabel", new PositionLabel(camera));
-        labels.put("DirectionLabel", new DirectionLabel(camera));
-        labels.put("DeltaY", new DeltaY(camera));
+        labels.put("FPSLabel", new FPSLabel());
+        labels.put("PositionLabel", new PositionLabel());
+        labels.put("DirectionLabel", new DirectionLabel());
+        labels.put("DeltaY", new DeltaY());
 
 
         int i=0;

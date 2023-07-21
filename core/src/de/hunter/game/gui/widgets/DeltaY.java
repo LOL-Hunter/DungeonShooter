@@ -4,7 +4,7 @@ import de.hunter.game.camera.Camera;
 import de.hunter.game.gui.widgets.lib.Label;
 
 public class DeltaY extends Label {
-    public DeltaY(Camera camera) {
-        super(camera);
+    public DeltaY() {
+        super();
     }
 }
