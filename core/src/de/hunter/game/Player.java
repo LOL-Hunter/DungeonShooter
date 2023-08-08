@@ -1,6 +1,7 @@
 package de.hunter.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import de.hunter.game.camera.Camera;
 
@@ -39,4 +40,7 @@ public class Player {
     public void setPlayerFlying(boolean playerFlying) {
         isPlayerFlying = playerFlying;
     }
+
+
+
 }

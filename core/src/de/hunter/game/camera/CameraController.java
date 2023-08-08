@@ -28,6 +28,7 @@ public class CameraController implements InputProcessor {
     public void setMouseCatched(boolean isCatched){
         this.isMouseCatched = isCatched;
         Gdx.input.setCursorCatched(isCatched);
+
     }
     public void update(){
         final float dt = Gdx.graphics.getDeltaTime();

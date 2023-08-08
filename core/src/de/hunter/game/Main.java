@@ -35,6 +35,7 @@ public class Main extends ApplicationAdapter {
 		ModelBuilder modelBuilder = new ModelBuilder();
 
 		Texture grassBlock = new Texture("grass_block.png");
+		Texture floor = new Texture("floor.png");
 
 
 		TextureRegion textureRegionBottom = new TextureRegion(grassBlock, 0, 0, 64, 64);
@@ -42,13 +43,28 @@ public class Main extends ApplicationAdapter {
 		TextureRegion textureRegionTop = new TextureRegion(grassBlock, 64*2, 0, 64, 64);
 
 		Material materialGreen = new Material(ColorAttribute.createDiffuse(Color.GREEN));
-		Model floorModel = modelBuilder.createLineGrid(20, 20, 5, 5, materialGreen, Usage.Position | Usage.Normal);
+		//Model floorModel = modelBuilder.createLineGrid(20, 20, 5, 5, materialGreen, Usage.Position | Usage.Normal);
 
 		int attr =  Usage.Position | Usage.Normal | Usage.TextureCoordinates;
+
+
+		float size = 10.0f;
 		
 		// create Grassblock
 		modelBuilder.begin();
-		float size = 5.0f;
+		MeshPartBuilder floorMesh = modelBuilder.part("floor", GL20.GL_TRIANGLES, attr, new Material(TextureAttribute.createDiffuse(floor)));
+		floorMesh.setUVRange(textureRegionTop); // top
+		floorMesh.rect(-size, size,-size, // 00
+				-size, size, size, // 10
+				size, size, size, // 11
+				size, size,-size, // 01
+				0,-1,0);
+
+		Model floorModel = modelBuilder.end();
+
+
+		modelBuilder.begin();
+		size = 5.0f;
 		MeshPartBuilder meshPartBuilder = modelBuilder.part("box", GL20.GL_TRIANGLES, attr, new Material(TextureAttribute.createDiffuse(grassBlock)));
 
 		meshPartBuilder.setUVRange(textureRegionSide); // side
@@ -95,7 +111,6 @@ public class Main extends ApplicationAdapter {
 		Model boxModel = modelBuilder.end();
 
 
-
 		disposables.add(boxModel);
 		disposables.add(floorModel);
 
@@ -118,9 +133,6 @@ public class Main extends ApplicationAdapter {
 	public void onTick(float dt){
 		// Movement & Camera update
 		player.update();
-		if (((GameObject) modelInstances.get(1)).isVisible(player.getCamera())){
-			System.out.print(".");
-		}
 	}
 	@Override
 	public void render() {

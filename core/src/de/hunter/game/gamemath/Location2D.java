@@ -4,7 +4,7 @@ public class Location2D extends BaseLocation{
 
 
 
-    public Location2D(int x, int y){
+    public Location2D(float x, float y){
         this.x = x;
         this.y = y;
     }
@@ -14,7 +14,7 @@ public class Location2D extends BaseLocation{
     public Location2D(Location2D loc){
         this(loc.getX(), loc.getY());
     }
-    public void set(int x, int y){
+    public void set(float x, float y){
         this.x = x;
         this.y = y;
     }
